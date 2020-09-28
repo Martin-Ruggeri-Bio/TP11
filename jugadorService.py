@@ -24,14 +24,3 @@ class JugadorService():
         if key > lastKey:
             raise ValueError("no se puede eliminar si el id no existe")
         del Repositorios.jugadorList[key]
-
-
-'''jugador = Jugador('Martin', 2)
-jugador2 = Jugador('Juan', 2)
-jugador3 = Jugador('pepe', 2)
-jugadorKey = JugadorService().add_jugador(jugador)
-jugadorKey2 = JugadorService().add_jugador(jugador2)
-jugadorKey3 = JugadorService().add_jugador(jugador3)
-print(jugadorKey)
-print(jugadorKey2)
-print(jugadorKey3)'''
