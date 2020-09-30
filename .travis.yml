@@ -1,10 +1,12 @@
 languaje: python
 python:
     - "3.8"
+
 script:
+    - coverage run test_ahorcado.py
     - coverage run test_jugador.py
     - coverage run test_palabra.py
-    - coverage run test_ahorcado.py
+    - coverage run test_adivinanza.py
 
 install:
     - pip install -r requirements.txt
