@@ -4,10 +4,10 @@ from repositorios import Repositorios
 class Adivinanza():
 
     def guiaPalabra(self, palabra_elegida=""):
+        palabraGuia = []
         for i in palabra_elegida:
-            Repositorios.palabraGuia.append("__ ")
-        palabra = Repositorios.palabraGuia
-        return palabra
+            palabraGuia.append("__ ")
+        return palabraGuia
 
     def check_letras(self, letra):
         indices = []
@@ -16,8 +16,7 @@ class Adivinanza():
                 indices.append(i)
         return indices
 
-    def add_letras(self, letra, posicion):
+    def add_letras(self, letra, posicion, guia):
         for i in posicion:
-            Repositorios.palabraGuia[i] = letra
-        palabra = Repositorios.palabraGuia
-        return palabra
+            guia[i] = letra
+        return guia

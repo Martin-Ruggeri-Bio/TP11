@@ -18,11 +18,12 @@ class TestAdivinanza(unittest.TestCase):
 
     @parameterized.expand([
         ("t", [0, 3], ["t", "__ ", "__ ", "t", "__ "]),
-        ("o", [1], ["t", "o", "__ ", "t", "__ "]),
-        ("a", [4], ["t", "o", "__ ", "t", "a"]),
+        ("o", [1], ["__ ", "o", "__ ", "__ ", "__ "]),
+        ("a", [4], ["__ ", "__ ", "__ ", "__ ", "a"]),
     ])
-    def test_add_letras(self, letra, posicion, guia):
-        self.assertEqual(Adivinanza().add_letras(letra, posicion), guia)
+    def test_add_letras(self, letra, posicion, guiaComleta):
+        guia = Adivinanza().guiaPalabra("torta")
+        self.assertEqual(Adivinanza().add_letras(letra, posicion, guia), guiaComleta)
 
 
 if __name__ == '__main__':

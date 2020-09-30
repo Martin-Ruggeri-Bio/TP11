@@ -9,5 +9,3 @@ class Repositorios():
                   't', 'u', 'v', 'w',
                   'x', 'y', 'z']
     palabraElegida = "torta"
-    palabraGuia = []
-    palabraGuiaElegida = ["t", "o", "__ ", "t", "a"]
