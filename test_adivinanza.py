@@ -5,7 +5,7 @@ from repositorios import Repositorios
 
 
 class TestAdivinanza(unittest.TestCase):
-    def test_guiaPalabra(self,):
+    def test_guiaPalabra(self):
         self.assertEqual(Adivinanza().guiaPalabra("pato"), ['__ ', '__ ', '__ ', '__ '])
     
     @parameterized.expand([

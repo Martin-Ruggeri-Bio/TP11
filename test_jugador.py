@@ -36,7 +36,8 @@ class TestJugador(unittest.TestCase):
     @parameterized.expand([
             ('Martin', 2, 'Juan', 2, 'pedro', 2)
         ])
-    def test_Validate_cant_jugadores(self, nombre1, dificultad1, nombre2, dificultad2, nombre3, dificultad3):
+    def test_Validate_cant_jugadores(self, nombre1, dificultad1, nombre2,\
+                                     dificultad2, nombre3, dificultad3):
         jugador1 = Jugador(nombre1, dificultad1)
         jugador2 = Jugador(nombre2, dificultad2)
         jugador3 = Jugador(nombre3, dificultad3)
