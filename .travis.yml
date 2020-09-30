@@ -3,7 +3,7 @@ python:
     - "3.8"
 
 script:
-    - coverage run test_ahorcado.py && test_jugador.py && test_palabra.py && test_adivinanza.py
+    - coverage run test_ejecutador.py
 
 install:
     - pip install -r requirements.txt
