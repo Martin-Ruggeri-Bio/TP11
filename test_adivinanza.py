@@ -1,15 +1,15 @@
 import unittest
 from parameterized import parameterized
 from adivinanza import Adivinanza
-from repositorios import Repositorios
 
 
 class TestAdivinanza(unittest.TestCase):
     def test_guiaPalabra(self):
-        self.assertEqual(Adivinanza().guiaPalabra("pato"), ['__ ', '__ ', '__ ', '__ '])
-    
+        self.assertEqual(Adivinanza().guiaPalabra("pato"),
+                         ['__ ', '__ ', '__ ', '__ '])
+
     @parameterized.expand([
-        ("t", [0, 3] ),
+        ("t", [0, 3]),
         ("o", [1]),
         ("a", [4]),
     ])
@@ -23,7 +23,8 @@ class TestAdivinanza(unittest.TestCase):
     ])
     def test_add_letras(self, letra, posicion, guiaComleta):
         guia = Adivinanza().guiaPalabra("torta")
-        self.assertEqual(Adivinanza().add_letras(letra, posicion, guia), guiaComleta)
+        self.assertEqual(Adivinanza().add_letras(letra, posicion, guia),
+                         guiaComleta)
 
     @parameterized.expand([
         ("pato", 3, 12),
@@ -31,7 +32,8 @@ class TestAdivinanza(unittest.TestCase):
         ("pajaro", 1, 6)
     ])
     def test_intentos(self, palabra_elegida, dificultad, intentos):
-        self.assertEqual(Adivinanza().intentos(palabra_elegida, dificultad), intentos)
+        self.assertEqual(Adivinanza().intentos(palabra_elegida, dificultad),
+                         intentos)
 
 
 if __name__ == '__main__':

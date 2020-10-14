@@ -2,8 +2,10 @@ from partida import Partida
 from repositorios import Repositorios
 from random import choice
 
+
 class ServicesPartidas():
-    def iniciar_partida(self, nombre_jugador, dificultad, nombre_palabra, tipo_palabra):
+    def iniciar_partida(self, nombre_jugador, dificultad, nombre_palabra,
+                        tipo_palabra):
         if dificultad < 1 or dificultad > 10:
             raise ValueError("no puede ser menor a 1 o mayor a 10")
         if nombre_palabra == "" and tipo_palabra == "":
@@ -13,13 +15,13 @@ class ServicesPartidas():
             nombre_palabra = choice(listado)
         intentos = len(nombre_palabra) * dificultad
         return Partida(nombre_palabra, intentos, tipo_palabra, nombre_jugador)
-    
+
     def get_random_palabra(self):
         listado = list(Repositorios.palabraList2)
         tipo_palabra = choice(listado)
         listado = list(Repositorios.palabraList2[tipo_palabra])
         nombre_palabra = choice(listado)
-        return {'palabra':nombre_palabra, 'tipo_palabra':tipo_palabra}
+        return {'palabra': nombre_palabra, 'tipo_palabra': tipo_palabra}
 
     def intentar_letra(self, partida, letra):
         if partida == Repositorios.partida_anterior:

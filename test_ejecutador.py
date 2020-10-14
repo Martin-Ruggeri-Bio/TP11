@@ -1,10 +1,8 @@
 from test_adivinanza import TestAdivinanza
 from test_ahorcado import TestAhorcado
-from test_jugador import TestJugador
-from test_palabra import TestPalabra
+from test_partida import TestPartida
 
 
-primertest = TestJugador()
-segundotest = TestPalabra()
+segundotest = TestPartida()
 tercertest = TestAhorcado()
 cuartotest = TestAdivinanza()
