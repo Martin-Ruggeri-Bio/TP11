@@ -1,5 +1,5 @@
 from repositorios import Repositorios
-
+from random import choice
 
 class PalabraService():
     def get_palabraList(self):
@@ -21,11 +21,9 @@ class PalabraService():
             raise ValueError("no se puede eliminar si el id no existe")
         del Repositorios.palabraList[key]
 
-    def listarDisponibles(self):
-        j = 0
-        listado = {}
-        for key in Repositorios.palabraList:
-            if Repositorios.palabraList[key]['_estado'] == 'disponible':
-                listado[j] = Repositorios.palabraList[key]
-                j = j + 1
-        return listado
+    def eleccion_de_maquina(self):
+        listado = list(Repositorios.palabraList2)
+        tipo_palabra = choice(listado)
+        listado = list(Repositorios.palabraList2[tipo_palabra])
+        palabra = choice(listado)
+        return palabra, tipo_palabra

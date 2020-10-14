@@ -25,6 +25,14 @@ class TestAdivinanza(unittest.TestCase):
         guia = Adivinanza().guiaPalabra("torta")
         self.assertEqual(Adivinanza().add_letras(letra, posicion, guia), guiaComleta)
 
+    @parameterized.expand([
+        ("pato", 3, 12),
+        ("perro", 2, 10),
+        ("pajaro", 1, 6)
+    ])
+    def test_intentos(self, palabra_elegida, dificultad, intentos):
+        self.assertEqual(Adivinanza().intentos(palabra_elegida, dificultad), intentos)
+
 
 if __name__ == '__main__':
     unittest.main()
