@@ -36,7 +36,7 @@ class Ahorcado():
         juego = 'Continua'
         while juego == 'Continua':
             letra = input("ingrese una letra jugador:\n")
-            if letra == 'salir':
+            if letra == 'salir' or letra == '3':
                 break
             juego = ServicesPartidas().intentar_letra(partida, letra)
             Repositorios().historial[nro_jugador] = {partida: [letra, juego]}
