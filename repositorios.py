@@ -35,3 +35,4 @@ class Repositorios():
     aciertos = 0
     partida_anterior = dict()
     historial = dict()
+    letras_totales = []

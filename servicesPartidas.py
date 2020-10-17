@@ -9,10 +9,13 @@ class ServicesPartidas():
         if int(dificultad) < 1 or int(dificultad) > 10:
             raise ValueError("no puede ser menor a 1 o mayor a 10")
         if nombre_palabra == "" and tipo_palabra == "":
+            print("adivina esta palabra")
             palabra_dict = ServicesPartidas().get_random_palabra()
             nombre_palabra = palabra_dict['palabra']
             tipo_palabra = palabra_dict['tipo_palabra']
+            print("la palabra elegida es un " + tipo_palabra)
         intentos = len(nombre_palabra) * int(dificultad)
+        print("tienes " + str(intentos) + " intentos")
         partida = Partida(nombre_palabra, intentos,
                           tipo_palabra, nombre_jugador)
         return partida
@@ -29,11 +32,11 @@ class ServicesPartidas():
         if partida == Repositorios.partida_anterior:
             raise ValueError("no puede ingresar mas letras para esa palabra")
         Repositorios.intentos += 1
-        if letra in partida._palabra:
+        if letra.upper() in partida._palabra:
             Repositorios.aciertos += 1
-            if Repositorios.aciertos == len(partida._palabra):
-                ServicesPartidas().guardar_intentos(partida)
-                return 'Gano'
+        if Repositorios.aciertos == len(partida._palabra):
+            ServicesPartidas().guardar_intentos(partida)
+            return 'Gano'
         if Repositorios.intentos == partida._intentos:
             ServicesPartidas().guardar_intentos(partida)
             return 'Perdio'
