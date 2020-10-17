@@ -1,4 +1,5 @@
 class Repositorios():
+    palabraList1 = dict()
     palabraList2 = {'animales': {
         'abeja', 'aguila', 'araña', 'avispa', 'ballena', 'bisonte',
         'bufalo', 'burro', 'caballo', 'camello', 'cangrejo', 'canguro',
@@ -30,9 +31,7 @@ class Repositorios():
         'Italia', 'Perú', 'Japón', 'Alemania', 'Inglaterra', 'Canada',
         'China', 'Rusia', 'Ecuador', 'Australia', 'Egipto', 'Grecia',
         'Cuba', 'India', 'Israel', 'Sudafrica', 'Madagascar', 'Haiti'}}
-    palabraList = dict()
-    jugadorList = dict()
-    palabraElegida = "torta"
     intentos = 0
     aciertos = 0
-    partida_anterior = {}
+    partida_anterior = dict()
+    historial = dict()
