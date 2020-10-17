@@ -3,7 +3,8 @@ python:
     - "3.8"
 
 script:
-    - coverage run test_ahorcado.py && test_partida.py
+    - coverage run test_ahorcado.py 
+    - coverage run test_partida.py
 
 install:
     - pip install -r requirements.txt
