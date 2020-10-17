@@ -9,22 +9,21 @@ class ServicesPartidas():
         if int(dificultad) < 1 or int(dificultad) > 10:
             raise ValueError("no puede ser menor a 1 o mayor a 10")
         if nombre_palabra == "" and tipo_palabra == "":
-            nombre_palabra, tipo_palabra = ServicesPartidas().random_palabra()
+            palabra_dict = ServicesPartidas().get_random_palabra()
+            nombre_palabra = palabra_dict['palabra']
+            tipo_palabra = palabra_dict['tipo_palabra']
         intentos = len(nombre_palabra) * int(dificultad)
         partida = Partida(nombre_palabra, intentos,
                           tipo_palabra, nombre_jugador)
         return partida
 
     def get_random_palabra(self):
-        nombre_palabra, tipo_palabra = ServicesPartidas().random_palabra()
-        return {'palabra': nombre_palabra, 'tipo_palabra': tipo_palabra}
-
-    def random_palabra(self):
         listado = list(Repositorios.palabraList2)
         tipo_palabra = choice(listado)
         listado = list(Repositorios.palabraList2[tipo_palabra])
         nombre_palabra = choice(listado)
-        return nombre_palabra, tipo_palabra
+        palabra_dict = {'palabra': nombre_palabra, 'tipo_palabra': tipo_palabra}
+        return palabra_dict
 
     def intentar_letra(self, partida, letra):
         if partida == Repositorios.partida_anterior:
