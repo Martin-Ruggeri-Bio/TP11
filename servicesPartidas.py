@@ -22,8 +22,8 @@ class ServicesPartidas():
         tipo_palabra = choice(listado)
         listado = list(Repositorios.palabraList2[tipo_palabra])
         nombre_palabra = choice(listado)
-        palabra_dict = {'palabra': nombre_palabra, 'tipo_palabra': tipo_palabra}
-        return palabra_dict
+        palabra = {'palabra': nombre_palabra, 'tipo_palabra': tipo_palabra}
+        return palabra
 
     def intentar_letra(self, partida, letra):
         if partida == Repositorios.partida_anterior:
