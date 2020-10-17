@@ -1,12 +1,11 @@
 languaje: python
 python:
     - "3.8"
-
-script:
-    - coverage run test_partida.py && coverage run test_ahorcado
-
 install:
     - pip install -r requirements.txt
-
+script:
+    - coverage run test_partida.py 
+    - coverage run test_ahorcado.py 
 after_success:
+    - coveralls
     - coveralls
