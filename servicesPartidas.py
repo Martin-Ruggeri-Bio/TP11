@@ -18,6 +18,8 @@ class ServicesPartidas():
         print("tienes " + str(intentos) + " intentos")
         partida = Partida(nombre_palabra, intentos,
                           tipo_palabra, nombre_jugador)
+        Repositorios.intentos = 0
+        Repositorios.aciertos = 0
         return partida
 
     def get_random_palabra(self):
@@ -32,6 +34,8 @@ class ServicesPartidas():
         if partida == Repositorios.partida_anterior:
             raise ValueError("no puede ingresar mas letras para esa palabra")
         Repositorios.intentos += 1
+        if Repositorios.intentos > partida._intentos:
+            raise ValueError("no puede ingresar mas letras para esa palabra")
         if letra.upper() in partida._palabra:
             Repositorios.aciertos += 1
         if Repositorios.aciertos == len(partida._palabra):
