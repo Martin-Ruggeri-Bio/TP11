@@ -23,9 +23,7 @@ if __name__ == '__main__':
             juego.dos_jugadores()
             print(Repositorios().historial[0])
             print(Repositorios().historial[1])
-        if opcion_jugador == 'salir':
-            print(Repositorios().historial[0])
-            print(Repositorios().historial[1])
+        elif opcion_jugador == 'salir':
             exit
         else:
             exit
