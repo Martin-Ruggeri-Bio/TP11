@@ -18,7 +18,7 @@ if __name__ == '__main__':
             print("\nEligio jugar contra la maquina\n")
             juego.un_jugador()
             print(Repositorios().historial[0])
-        if opcion_jugador == 2:
+        elif opcion_jugador == 2:
             print("\nEligio jugar contra un amigo\n")
             juego.dos_jugadores()
             print(Repositorios().historial[0])
@@ -26,5 +26,6 @@ if __name__ == '__main__':
         if opcion_jugador == 'salir':
             print(Repositorios().historial[0])
             print(Repositorios().historial[1])
+            exit
         else:
             exit
